@@ -5,7 +5,7 @@
 
 # Creo la función
 makeCacheMatrix <- function(x=matrix()) {
-  # COnfiguro la matriz
+  # Configuro la matriz
   m <- NULL
   set <- function(matrix) {
     x <<- matrix
@@ -25,18 +25,18 @@ makeCacheMatrix <- function(x=matrix()) {
        getinvm = getinvm)
 }
 
-
+# Creo la función
 cacheSolve <- function(x, ...) {
-  
+# Configuro la matriz  
   m <- x$getinvm
-  
+# Configuro el mensaje  
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
   }
-  
+# Asigno data  
   data <- x$get()
-  
+# Resuelvo la operación
   m <- solve(data) %*% data
   
   x$setinvm(m)
